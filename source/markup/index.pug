@@ -13,8 +13,8 @@ block content
         .lawyer__contacts
           p.lawyer__adress Санкт-Петербург, г. Пушкин ул. Оранжерейная д.48 БЦ 'Графит' 2 этаж, офис 28
           p.lawyer__connections
-            a(href='+7 (812) 962 19 51').lawyer__phone +7 (812) 962 19 51
-            a(href='mailto: 9621951@mail.ru').lawyer__email 9621951@mail.ru
+            a(href='tel:+7-(812)-962-19-51').lawyer__phone +7 (812) 962 19 51
+            a(href='mailto:9621951@mail.ru').lawyer__email 9621951@mail.ru
 
     button(aria-label='Переключатель открыть/закрыть меню').nav-toggle
       span
@@ -87,7 +87,8 @@ block content
 
         section.latest-articles
           .latest-articles__wrapper
-            ul.latest-article__name Статьи
+            .latest-article__name Статьи
+            ul.latest-article__list
               li.latest-article__item
                 p.latest-article__name-article Что изменилось в правилах регистрации недвижимости
                 p.latest-article__annotation-article С 01.01.2017 в сфере недвижимости действует новый закон 'О государственной регистрации недвижимости'
@@ -145,19 +146,19 @@ block content
           p Адвокат Якубов Рашад Киязович.
 
       section.feedback
+        p.feedback__name Бесплатная онлайн консультация адвоката
         .feedback__wrap
           h2.visually-hidden Форма обратной связи
-          legend.feedback__name Бесплатная онлайн консультация адвоката
-          form.feedback__form(method='post', action='', enctype='')
+          form.feedback__form(method='post', action='/s/mail_vac', enctype='multipart/form-data')
             label.feedback__label
               span.feedback__note Ваше имя:
               input#your-name.feedback__field(type='text', name='your-name', required='')
             label.feedback__label
               span.feedback__note Ваше телефон:
-              input#phone.feedback__field(type='phone', name='phone', required='')
+              input#phone.feedback__field(type='tel', name='phone', required='')
             label.feedback__label
               span.feedback__note Ваше email:
-              input#email.feedback__field(class='type=', name='email', required='')
+              input#email.feedback__field(type='email', name='email', required='')
             label.feedback__label.feedback__label--textarea
               span.feedback__note Текст письма:
               textarea#message.feedback__textarea(name='message')
@@ -193,8 +194,8 @@ block content
         .lawyer__contacts
           p.lawyer__adress Санкт-Петербург, г. Пушкин ул. Оранжерейная д.48 БЦ 'Графит' 2 этаж, офис 28
           p.lawyer__connections
-            a(href='+7 (812) 962 19 51').lawyer__phone +7 (812) 962 19 51
-            a(href='mailto: 9621951@mail.ru').lawyer__email 9621951@mail.ru
+            a(href='tel:+7-(812)-962-19-51').lawyer__phone +7 (812) 962 19 51
+            a(href='mailto:9621951@mail.ru').lawyer__email 9621951@mail.ru
 
       p.footer__copyright Юридические услуги. © 2018 Все права защищены.
 

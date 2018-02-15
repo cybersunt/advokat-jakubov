@@ -18,7 +18,7 @@
           <p class="lawyer__description">Адвокатская Палата Санкт-Петербурга, Адвокатский кабинет, Якубов Рашад Киязович, регистрационный номер в реестре адвокатов 78/5587</p>
           <div class="lawyer__contacts">
             <p class="lawyer__adress">Санкт-Петербург, г. Пушкин ул. Оранжерейная д.48 БЦ 'Графит' 2 этаж, офис 28</p>
-            <p class="lawyer__connections"><a class="lawyer__phone" href="+7 (812) 962 19 51">+7 (812) 962 19 51</a><a class="lawyer__email" href="mailto: 9621951@mail.ru">9621951@mail.ru</a></p>
+            <p class="lawyer__connections"><a class="lawyer__phone" href="tel:+7-(812)-962-19-51">+7 (812) 962 19 51</a><a class="lawyer__email" href="mailto:9621951@mail.ru">9621951@mail.ru</a></p>
           </div>
         </div>
       </div>
@@ -69,7 +69,8 @@
           </nav>
           <section class="latest-articles">
             <div class="latest-articles__wrapper">
-              <ul class="latest-article__name">Статьи
+              <div class="latest-article__name">Статьи</div>
+              <ul class="latest-article__list">
                 <li class="latest-article__item">
                   <p class="latest-article__name-article">Что изменилось в правилах регистрации недвижимости</p>
                   <p class="latest-article__annotation-article">С 01.01.2017 в сфере недвижимости действует новый закон 'О государственной регистрации недвижимости'</p><a class="latest-article__link" href="#">Подробнее</a>
@@ -117,18 +118,18 @@
           </div>
         </section>
         <section class="feedback">
+          <p class="feedback__name">Бесплатная онлайн консультация адвоката</p>
           <div class="feedback__wrap">
             <h2 class="visually-hidden">Форма обратной связи</h2>
-            <legend class="feedback__name">Бесплатная онлайн консультация адвоката</legend>
-            <form class="feedback__form" method="post" action="" enctype="">
+            <form class="feedback__form" method="post" action="/s/mail_vac" enctype="multipart/form-data">
               <label class="feedback__label"><span class="feedback__note">Ваше имя:</span>
                 <input class="feedback__field" id="your-name" type="text" name="your-name" required="">
               </label>
               <label class="feedback__label"><span class="feedback__note">Ваше телефон:</span>
-                <input class="feedback__field" id="phone" type="phone" name="phone" required="">
+                <input class="feedback__field" id="phone" type="tel" name="phone" required="">
               </label>
               <label class="feedback__label"><span class="feedback__note">Ваше email:</span>
-                <input class="feedback__field type=" id="email" name="email" required="">
+                <input class="feedback__field" id="email" type="email" name="email" required="">
               </label>
               <label class="feedback__label feedback__label--textarea"><span class="feedback__note">Текст письма:</span>
                 <textarea class="feedback__textarea" id="message" name="message"></textarea>
@@ -160,7 +161,7 @@
           <p class="lawyer__description">Адвокатская Палата Санкт-Петербурга, Адвокатский кабинет, Якубов Рашад Киязович, регистрационный номер в реестре адвокатов 78/5587</p>
           <div class="lawyer__contacts">
             <p class="lawyer__adress">Санкт-Петербург, г. Пушкин ул. Оранжерейная д.48 БЦ 'Графит' 2 этаж, офис 28</p>
-            <p class="lawyer__connections"><a class="lawyer__phone" href="+7 (812) 962 19 51">+7 (812) 962 19 51</a><a class="lawyer__email" href="mailto: 9621951@mail.ru">9621951@mail.ru</a></p>
+            <p class="lawyer__connections"><a class="lawyer__phone" href="tel:+7-(812)-962-19-51">+7 (812) 962 19 51</a><a class="lawyer__email" href="mailto:9621951@mail.ru">9621951@mail.ru</a></p>
           </div>
         </div>
         <p class="footer__copyright">Юридические услуги. © 2018 Все права защищены.</p>
