@@ -6,149 +6,68 @@ block title
 block content
   header.header
     .header__wrap
-
-      .lawyer
-        p.lawyer__name Адвокатский кабинет Якубов Рашад Киязович
-        p.lawyer__description Адвокатская Палата Санкт-Петербурга, Адвокатский кабинет, Якубов Рашад Киязович, регистрационный номер в реестре адвокатов 78/5587
-        .lawyer__contacts
-          p.lawyer__adress Санкт-Петербург, г. Пушкин ул. Оранжерейная д.48 БЦ 'Графит' 2 этаж, офис 28
-          p.lawyer__connections
-            a(href='tel:+7-(812)-962-19-51').lawyer__phone +7 (812) 962 19 51
-            a(href='mailto:9621951@mail.ru').lawyer__email 9621951@mail.ru
+      +about-advokat
 
     button(aria-label='Переключатель открыть/закрыть меню').nav-toggle
       span
-
     nav.main-nav
       ul.main-nav__list
-        li.main-nav__item.main-nav__item--current Главная
-        li.main-nav__item
-          a(href='#').main-nav__link Услуги адвоката
-        li.main-nav__item
-          a(href='#').main-nav__link Практика
-        li.main-nav__item
-          a(href='#').main-nav__link Контакты
+        each item in mainNav
+          li.main-nav__item
+            a.main-nav__link(href='#')= item
+
     blockquote.header__blockquote Знать свои права - значит быть сильным!
     p.header__note Первичная устная консультация - бесплатно!
 
   main.main-content
     .main-content__wrap
       aside.sidebar
-        nav.service-menu
-          .service-menu__wrapper
-            .service-menu__name Услуги
-            ul.service-menu__list
-              li.service-menu__item
-                a(href='#').service-menu__link Недвижимость
-              li.service-menu__item
-                a(href='#').service-menu__link Земельные споры
-              li.service-menu__item
-                a(href='#').service-menu__link Выселение
-              li.service-menu__item
-                a(href='#').service-menu__link Защита прав дольщиков
-              li.service-menu__item
-                a(href='#').service-menu__link Признание прав собственности
-              li.service-menu__item
-                a(href='#').service-menu__link Корпоративные споры
-              li.service-menu__item
-                a(href='#').service-menu__link Семейные дела
-              li.service-menu__item
-                a(href='#').service-menu__link Развод и раздел имущества супругов
-              li.service-menu__item
-                a(href='#').service-menu__link Наследство
-              li.service-menu__item
-                a(href='#').service-menu__link Восстановление срока принятия наследства
-              li.service-menu__item
-                a(href='#').service-menu__link Оспаривание завещания
-              li.service-menu__item
-                a(href='#').service-menu__link Защита интеллектуальной собственности
-              li.service-menu__item
-                a(href='#').service-menu__link Авторские права наследников
-              li.service-menu__item
-                a(href='#').service-menu__link Нарушение авторских прав
-              li.service-menu__item
-                a(href='#').service-menu__link Трудовые споры
-              li.service-menu__item
-                a(href='#').service-menu__link Споры со страховыми
-              li.service-menu__item
-                a(href='#').service-menu__link Административные дела
-              li.service-menu__item
-                a(href='#').service-menu__link Банкротство
-              li.service-menu__item
-                a(href='#').service-menu__link Гражданские дела
-              li.service-menu__item
-                a(href='#').service-menu__link Защита прав потребителей
-              li.service-menu__item
-                a(href='#').service-menu__link Признание договора недействительным
-              li.service-menu__item
-                a(href='#').service-menu__link Составление искового заявления
-              li.service-menu__item
-                a(href='#').service-menu__link Юридическая консультация
+        +nav('service-menu', 'Услуги', serviceMenu)
 
         section.latest-articles
           .latest-articles__wrapper
             .latest-article__name Статьи
             ul.latest-article__list
-              li.latest-article__item
-                p.latest-article__name-article Что изменилось в правилах регистрации недвижимости
-                p.latest-article__annotation-article С 01.01.2017 в сфере недвижимости действует новый закон 'О государственной регистрации недвижимости'
-                a(href='#').latest-article__link Подробнее
-              li.latest-article__item
-                p.latest-article__name-article Что изменилось в правилах регистрации недвижимости
-                p.latest-article__annotation-article С 01.01.2017 в сфере недвижимости действует новый закон 'О государственной регистрации недвижимости'
-                a(href='#').latest-article__link Подробнее
-              li.latest-article__item
-                p.latest-article__name-article Что изменилось в правилах регистрации недвижимости
-                p.latest-article__annotation-article С 01.01.2017 в сфере недвижимости действует новый закон 'О государственной регистрации недвижимости'
-                a(href='#').latest-article__link-article Подробнее
+              each article, value in articles
+                li.latest-article__item
+                  p.latest-article__name-article= article.name
+                  p.latest-article__annotation-article= article.desc
+                  a(href='#').latest-article__link= article.link
             a(href='#').latest-article__link Все статьи
 
       section.cms-content
         .cms-content__wrapper
           h1 Адвокат Якубов Рашад Киязович
-
-          p Вы находитесь на сайте адвоката Санкт-Петербурга. Я оказываю юридические услуги в Ленинградской области.
-          p Области моих профессионалsьных интересов – недвижимость, корпоративное право, право интеллектуальной собственности, судебные споры в гражданско-правовой сфере, осуществляю работу по уголовным делам.
-          p Также я работаю в сфере договорного права: разрабатываю проекты договоров, осуществляю юридическое сопровождение сделок, участвую в согласовании договорных условий, даю заключения по договорам.
-          p По роду деятельности я регулярно участвую в судебных заседаниях районных судов города Санкт-Петербург, Санкт-Петербургском городском и областном судах, Арбитражном суде города Санкт-Петербург, Арбитражном суде Ленинградской области, 9 и 10 арбитражных апелляционных судах, арбитражном суде.
+          each content in textBlock1
+            p= content
 
           h2 Юридическая помощь
 
-          .advantages
+          section.advantages
+            h3.visually-hidden Преимущества
             ul.advantages__list
-              li.advantages__item
-                img(src='img/content/legal-hammer.svg' alt='Судейский молоток', width='60', height='60').advantages__icon
-                span Участие в судах
-              li.advantages__item
-                img(src='img/content/wallet-filled-money-tool.svg' alt='Кошелек', width='62', height='60').advantages__icon
-                span Разумные цены
-              li.advantages__item
-                img(src='img/content/clock.svg' alt='Часы', width='60', height='60').advantages__icon
-                span Пунктуальность
+              each advantage, value in advantages
+                li.advantages__item
+                  img(src= advantage.imgSrc, alt= advantage.imgAlt, width= advantage.imgWidth, height= advantage.imgHeight).advantages__icon
+                  = advantage.text
 
-          p Каждый человек имеет интересы, права, которые необходимо защищать. В ряде случаев для этого необходима помощь специалиста в области права, адвоката.
-          p Особенно важно привлечь к участию в деле юриста, когда цена ошибки очень высока.
-          p Чтобы защитить свои права, нужно как минимум знать закон. Но чтобы суд принял нужное Вам решение, этого знания мало. Нужно знать, как суд понимает закон, какие обстоятельства для него важны при разрешении спора.
-          p Судебная практика меняется и часто бывает противоречива. Но, чтобы обращение в суд было успешным, ее нужно учитывать. Судебный юрист не только знает законы, но и знает, как их понимает суд. Такое понимание нарабатывается опытом постоянной работы в судах, изучением судебной практики.
+          each content in textBlock2
+            p= content
 
           h2 Принципы работы
 
-          p Отношения адвоката и его клиента особые, недаром последний называется Доверителем. Эти отношения носят доверительный характер. Человек, обратившийся за помощью к адвокату, должен ему доверять.
-          p Условиями такого доверия, как сказано в Кодексе профессиональной этики адвоката, являются профессиональная независимость адвоката, убежденность доверителя в порядочности, честности и добросовестности адвоката.
-          p Оказание юридической помощи, представление интересов в суде должны быть не только профессией, но и любимым делом. Только в этом случае возможны профессиональный рост и развитие, подлинная компетентность.
+          each content in textBlock3
+            p= content
 
-          blockquote 'Дела бывают разные, простые и сложные, верные и безнадежные. Если шансы на успех малы – я скажу Вам об этом в самом начале. Я не буду давать Вам обещаний, которых не смогу выполнить.'
+          blockquote "Дела бывают разные, простые и сложные, верные и безнадежные. Если шансы на успех малы – я скажу Вам об этом в самом начале. Я не буду давать Вам обещаний, которых не смогу выполнить."
             img(src='img/content/balance.svg' alt='Весы правосудия', width='100', height='100')
 
-          p Кроме профессиональных умений и знаний адвокат должен обладать таким качеством как добросовестность. Если поручение принято – по делу должны быть приложены все силы, чтобы достичь положительного результата, помочь Доверителю.
-          p Если у вас возникнут вопросы, вы можете связаться со мной через форму обратной связи, по электронной почте или позвонить по телефону +7 (812) 962 19 51.
-          p Искренне надеюсь, что смогу помочь и Вам.
-          p Адвокат Якубов Рашад Киязович.
+          each content in textBlock4
+            p= content
 
       section.feedback
-        p.feedback__name Бесплатная онлайн консультация адвоката
         .feedback__wrap
-          h2.visually-hidden Форма обратной связи
+          h2.feedback__name Бесплатная онлайн-консультация адвоката
           form.feedback__form(method='post', action='/s/mail_vac', enctype='multipart/form-data')
             label.feedback__label
               span.feedback__note Ваше имя:
@@ -157,7 +76,7 @@ block content
               span.feedback__note Ваше телефон:
               input#phone.feedback__field(type='tel', name='phone', required='')
             label.feedback__label
-              span.feedback__note Ваше email:
+              span.feedback__note Ваше email:s
               input#email.feedback__field(type='email', name='email', required='')
             label.feedback__label.feedback__label--textarea
               span.feedback__note Текст письма:
@@ -165,51 +84,26 @@ block content
             button.feedback__send(type='submit') Отправить
 
       section.certificates
-        h2.visiually-hidden Фото сертификатов
-        p.certificates__name Свидетельство и cертификаты
+        h2.certificates__name Свидетельство и cертификаты
         ul.certificates__list
-          li.certificates__item
-            a(href='#').certificates__link
-              picture.certificates__thumb
-                img(src='img/content/certificate_1.jpg' alt='Грамота')
-          li.certificates__item
-            a(href='#').certificates__link
-              picture.certificates__thumb
-                img(src='img/content/certificate_1.jpg' alt='Грамота')
-          li.certificates__item
-            a(href='#').certificates__link
-              picture.certificates__thumb
-                img(src='img/content/certificate_1.jpg' alt='Грамота')
-          li.certificates__item
-            a(href='#').certificates__link
-              picture.certificates__thumb
-                img(src='img/content/certificate_1.jpg' alt='Грамота')
-
+          each certificate, value in certificates
+            li.certificates__item
+              a(href= certificate.link, aria-label='Увеличить фото').certificates__link
+                picture.certificates__thumb
+                  //- source(srcset= certificate.web, type='image/webp')
+                  img(src= certificate.img, alt= certificate.alt,  width="120" height="174")
   footer.footer
     .footer__wrap
 
-      .lawyer
-        p.lawyer__name Адвокатский кабинет Якубов Рашад Киязович
-        p.lawyer__description Адвокатская Палата Санкт-Петербурга, Адвокатский кабинет, Якубов Рашад Киязович, регистрационный номер в реестре адвокатов 78/5587
-        .lawyer__contacts
-          p.lawyer__adress Санкт-Петербург, г. Пушкин ул. Оранжерейная д.48 БЦ 'Графит' 2 этаж, офис 28
-          p.lawyer__connections
-            a(href='tel:+7-(812)-962-19-51').lawyer__phone +7 (812) 962 19 51
-            a(href='mailto:9621951@mail.ru').lawyer__email 9621951@mail.ru
+      +about-advokat('footer')
 
       p.footer__copyright Юридические услуги. © 2018 Все права защищены.
 
       ul.social
-        li.social__item
-          a.social__link(href='https://instagram.com', aria-label='Мы в Instagram')
-            picture.social__icon
-              img(src='img/content/insta@1x.png', alt='Мы в Instagram')
-        li.social__item
-          a.social__link(href='https://vk.com', aria-label='Мы во Вконтакте')
-            picture.social__icon
-              img(src='img/content/insta@1x.png', alt='Мы в Instagram')
-        li.social__item
-          a.social__link(href='https://facebook.com', aria-label='Мы в Facebook')
-            picture.social__icon
-              img(src='img/content/insta@1x.png', alt='Мы в Instagram')
+        each social, value in socials
+          li.social__item
+            a.social__link(href= social.link, aria-label= social.alt)
+              picture.social__icon
+                //- source(srcset= social.web, type='image/webp')
+                img(src= social.img, alt= social.alt)
 
