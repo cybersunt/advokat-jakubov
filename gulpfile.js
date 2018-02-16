@@ -46,7 +46,7 @@ gulp.task('sass', () => {
 gulp.task('fonts', () => {
   gulp.src('./source/fonts**/*')
     .pipe(gulp.dest('./public/fonts'))
-    .pipe(reload({stream : true}));
+    .pipe(reload({stream : true }));
 });
 
 gulp.task('pug', () => {
@@ -54,7 +54,7 @@ gulp.task('pug', () => {
 	gulp.src('./source/markup/index.pug')
 		.pipe(plumber())
 		.pipe(pug({
-			// locals : JSON.parse(fs.readFileSync('./content.json', 'utf8')),
+			locals : JSON.parse(fs.readFileSync('./source/markup/content.json', 'utf8')),
 			pretty: true,
 		}))
 		.pipe(gulp.dest('./public'))
