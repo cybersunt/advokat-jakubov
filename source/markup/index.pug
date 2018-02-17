@@ -36,8 +36,8 @@ block content
                   p.latest-article__annotation-article= article.desc
                   a(href='#').latest-article__link= article.link
             a(href='#').latest-article__link Все статьи
-
-      section.cms-content
+      .main__col
+        section.cms-content
         .cms-content__wrapper
           h1 Адвокат Якубов Рашад Киязович
           each content in textBlock1
@@ -67,7 +67,7 @@ block content
           each content in textBlock4
             p= content
 
-      section.feedback
+        section.feedback
         .feedback__wrap
           h2.feedback__name Бесплатная онлайн-консультация адвоката
           form.feedback__form(method='post', action='/s/mail_vac', enctype='multipart/form-data')
@@ -85,7 +85,7 @@ block content
               textarea#message.feedback__textarea(name='message')
             button.feedback__send(type='submit') Отправить
 
-      section.certificates
+        section.certificates
         h2.certificates__name Свидетельство и cертификаты
         ul.certificates__list
           each certificate, value in certificates

@@ -1,0 +1,19 @@
+.main-content {
+  width: 100%;
+  background-color: $content-bg;
+  background-image: url('../img/decoration/bg-content.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: repeat;
+}
+
+.main-content__wrap {
+  @include wrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__col {
+  flex-basis: 670px;
+  flex-grow: 1;
+}

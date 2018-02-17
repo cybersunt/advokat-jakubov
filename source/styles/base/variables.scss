@@ -3,6 +3,7 @@ $font-light: 'Open Sans Light', 'Arial Italic', sans-serif;
 
 $content-size: 14px;
 $content-color: #333333;
+$content-bg: #dddddd;
 
 $global-bg: #3f4754;
 $header-bg: #dde1e8;
@@ -12,8 +13,8 @@ $white: #ffffff;
 $navy: #183f7c;
 
 @mixin wrap {
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 3.125%;
+  padding-right: 3.125%;
 }
 
 @mixin ul-line {
