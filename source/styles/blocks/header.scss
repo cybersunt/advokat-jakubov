@@ -1,0 +1,11 @@
+.header {
+  background-color: $header-bg;
+}
+
+.header__wrap {
+  @include wrap;
+}
+
+.nav-toggle {
+  display: none;
+}

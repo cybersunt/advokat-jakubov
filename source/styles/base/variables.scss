@@ -1,0 +1,30 @@
+$font-face: 'Open Sans', 'Arial', sans-serif;
+$font-light: 'Open Sans Light', 'Arial Italic', sans-serif;
+
+$content-size: 14px;
+$content-color: #333333;
+
+$global-bg: #3f4754;
+$header-bg: #dde1e8;
+
+$black: #000000;
+$white: #ffffff;
+$navy: #183f7c;
+
+@mixin wrap {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+@mixin ul-line {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+@mixin text($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}

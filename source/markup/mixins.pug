@@ -1,12 +1,15 @@
 mixin about-advokat (className)
   .lawyer(class=`lawyer--${className}`)
-    p.lawyer__name Адвокатский кабинет Якубов Рашад Киязович
+    .lawyer__info
+      p.lawyer__name Адвокатский кабинет
+        br
+        | Якубов Рашад Киязович
       p.lawyer__description Адвокатская Палата Санкт-Петербурга, Адвокатский кабинет, Якубов Рашад Киязович, регистрационный номер в реестре адвокатов 78/5587
-      .lawyer__contacts
-        p.lawyer__adress Санкт-Петербург, г. Пушкин ул. Оранжерейная д.48 БЦ "Графит" 2 этаж, офис 28
-        p.lawyer__connections
-          a(href='tel:+7-(812)-962-19-51').lawyer__phone +7 (812) 962 19 51
-          a(href='mailto:9621951@mail.ru').lawyer__email 9621951@mail.ru
+    .lawyer__contacts
+      p.lawyer__adress Санкт-Петербург, г. Пушкин ул. Оранжерейная д.48 БЦ "Графит" 2 этаж, офис 28
+      p.lawyer__connections
+        a(href='tel:+7-(812)-962-19-51').lawyer__phone +7 (812) 962 19 51
+        a(href='mailto:9621951@mail.ru').lawyer__email 9621951@mail.ru
 
 mixin nav (className, name, items)
   nav(class=`${className}`)

@@ -6,7 +6,7 @@ block title
 block content
   header.header
     .header__wrap
-      +about-advokat
+      +about-advokat('header')
 
     button(aria-label='Переключатель открыть/закрыть меню').nav-toggle
       span
@@ -16,8 +16,10 @@ block content
           li.main-nav__item
             a.main-nav__link(href='#')= item
 
-    blockquote.header__blockquote Знать свои права - значит быть сильным!
-    p.header__note Первичная устная консультация - бесплатно!
+      blockquote.main-nav__blockquote
+        span Знать свои права -&nbsp;
+        span значит быть сильным!
+      p.main-nav__note Первичная устная консультация - бесплатно!
 
   main.main-content
     .main-content__wrap
