@@ -1,0 +1,32 @@
+.cms-content__wrapper {
+  @include case;
+
+  h1 {
+    @include heading;
+    margin-top: 0;
+  }
+
+  h2 {
+    @include heading-h2;
+  }
+
+  p {
+    line-height: 21px
+  }
+
+  blockquote {
+    @include text(16px, 24px);
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 145px;
+    padding-left: 3.1%;
+    background-color: $navy;
+    color: $white;
+    font-style: italic;
+    background-image: url('../../img/decoration/balancr.png');
+
+    background-position: 96% center;
+    background-repeat: no-repeat;
+  }
+}

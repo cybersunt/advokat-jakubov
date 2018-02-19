@@ -1,0 +1,18 @@
+.advantages {
+  padding-left: 4.3%;
+  padding-right: 4.3%;
+}
+.advantages__list {
+  @include ul-line;
+  justify-content: space-between;
+}
+
+.advantages__item {
+  text-align: center;
+  font-weight: bold;
+}
+
+.advantages__icon {
+  display: block;
+  margin: 0 auto 10px;
+}

@@ -43,6 +43,30 @@
   }
 }
 
+@mixin heading {
+  font-size: 16px;
+  line-height: 18.35px;
+  background-color: $navy;
+  color: $white;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 9px 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+@mixin heading-h2 {
+  font-size: 16px;
+  line-height: 18.35px;
+  background-color: $bg-link-hover;
+  color: $navy;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px 20px;
+}
+
 @mixin article-link {
   color: $navy;
   border-bottom: 1px solid $navy;
