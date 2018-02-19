@@ -9,6 +9,7 @@
 
 .main-content__wrap {
   @include wrap;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
 }

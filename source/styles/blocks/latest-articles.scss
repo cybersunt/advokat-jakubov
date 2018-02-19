@@ -1,0 +1,48 @@
+.latest-articles {
+
+}
+
+.latest-articles__wrapper {
+  @include case;
+}
+
+.latest-articles__name {
+  @include heading-sidebar;
+  margin-bottom: 15px;
+}
+
+.latest-articles__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.latest-articles__item {
+  color: $sidebar-text;
+  margin-bottom: 10px;
+  clear: both;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.latest-articles__name-article {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.latest-articles__annotation-article {
+  margin-top: 0;
+}
+
+.latest-articles__link-article {
+  @include article-link;
+  max-width: 77px;
+  display: block;
+  margin-left: auto;
+}
+
+.latest-articles__link {
+  @include article-link;
+}

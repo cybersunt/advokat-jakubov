@@ -1,8 +1,5 @@
 extends main-template
 
-block title
-  | Главная
-
 block content
   header.header
     .header__wrap
@@ -26,16 +23,16 @@ block content
       aside.sidebar
         +nav('service-menu', 'Услуги', serviceMenu)
 
-        section.latest-articles
+        .latest-articles
           .latest-articles__wrapper
-            .latest-article__name Статьи
-            ul.latest-article__list
+            .latest-articles__name Статьи
+            ul.latest-articles__list
               each article, value in articles
-                li.latest-article__item
-                  p.latest-article__name-article= article.name
-                  p.latest-article__annotation-article= article.desc
-                  a(href='#').latest-article__link= article.link
-            a(href='#').latest-article__link Все статьи
+                li.latest-articles__item
+                  p.latest-articles__name-article= article.name
+                  p.latest-articles__annotation-article= article.desc
+                  a(href='#').latest-articles__link-article= article.link
+            a(href='#').latest-articles__link Все статьи »
       .main__col
         section.cms-content
         .cms-content__wrapper
