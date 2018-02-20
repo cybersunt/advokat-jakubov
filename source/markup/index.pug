@@ -35,8 +35,8 @@ block content
             a(href='#').latest-articles__link Все статьи »
       .main__col
         section.cms-content
+          h1 Адвокат Якубов Рашад Киязович
           .cms-content__wrapper
-            h1 Адвокат Якубов Рашад Киязович
             each content in textBlock1
               p= content
 
@@ -64,12 +64,12 @@ block content
               p= content
 
         section.feedback
+          h2.feedback__name Бесплатная онлайн-консультация адвоката
           .feedback__wrap
-            h2.feedback__name Бесплатная онлайн-консультация адвоката
             form.feedback__form(method='post', action='/s/mail_vac', enctype='multipart/form-data')
               .feedback__layout
                 .feedback__field
-                  label.feedback__label(for='your name') Ваше имя*:
+                  label.feedback__label(for='your-name') Ваше имя*:
                   input#your-name.feedback__input(type='text', name='your-name', pattern='[[A-Za-zА-Яа-яЁё]{2,}', title='Введите, пожалуйста, Ваше имя (не менее 2 символов)', placeholder='Например, Иван', required)
                 .feedback__field
                   label.feedback__label(for='phone') Ваше телефон*:
@@ -91,8 +91,7 @@ block content
                 li.certificates__item
                   a(href= certificate.link, aria-label='Увеличить фото').certificates__link
                     picture.certificates__thumb
-                    //- source(srcset= certificate.web, type='image/webp')
-                    img(src= certificate.img, alt= certificate.alt,  width="120" height="174")
+                      img(src= certificate.img, alt= certificate.alt,  width="120" height="174")
   footer.footer
     .footer__wrap
 

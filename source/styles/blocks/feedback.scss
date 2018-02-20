@@ -1,9 +1,10 @@
 .feedback {
+  @include case;
   margin-bottom: 30px;
 }
 
 .feedback__wrap {
-  @include case;
+  @include case-wrap;
   padding-bottom: 30px;
 }
 
@@ -67,6 +68,7 @@
   color: $white;
   text-transform: uppercase;
   cursor: pointer;
+  outline: none;
 
   &:hover,
   &:focus {

@@ -1,31 +1,47 @@
 .latest-articles__wrapper {
   @include case;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-bottom: 16px;
 }
 
 .latest-articles__name {
   @include heading-sidebar;
-  margin-bottom: 15px;
+  padding-top: 15px;
+  margin-bottom: 22px;
+
+  &::after {
+    top: 36px;
+  }
 }
 
 .latest-articles__list {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 23px;
   padding: 0;
   list-style: none;
 }
 
 .latest-articles__item {
-  margin-bottom: 20px;
+  margin-bottom: 19px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .latest-articles__name-article {
+  letter-spacing: 0.25px;
   margin-top: 0;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .latest-articles__annotation-article {
+  word-break: break-all;
   margin-top: 0;
   margin-bottom: 10px;
+  line-height: 17px;
 }
 
 .latest-articles__link-article {

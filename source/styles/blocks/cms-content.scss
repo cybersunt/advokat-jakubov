@@ -1,20 +1,21 @@
 .cms-content {
-  margin-bottom: 30px;
-}
-
-.cms-content__wrapper {
   @include case;
+  margin-bottom: 30px;
 
   h1 {
     @include heading;
   }
+}
+
+.cms-content__wrapper {
+  @include case-wrap;
 
   h2 {
     @include heading-h2;
   }
 
   p {
-    line-height: 21px
+    line-height: 18.35px;
   }
 
   blockquote {

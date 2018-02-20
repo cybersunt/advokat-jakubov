@@ -12,6 +12,18 @@
   }
 }
 
+.social__link {
+
+  &:hover .social__icon,
+  &:focus .social__icon {
+    opacity: 0.5;
+  }
+
+  &:active .social__icon  {
+    opacity: 0.3;
+  }
+}
+
 .social__icon {
   display: block;
 }

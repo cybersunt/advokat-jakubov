@@ -9,7 +9,7 @@
   @include heading-sidebar;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 4px;
+  margin-bottom: 16px;
 }
 
 .service-menu__list {
@@ -21,7 +21,7 @@
 .service-menu__link {
   display: inline-block;
   width: 100%;
-  padding: 8px 20px;
+  padding: 7px 20px;
   color: $content-color;
 
   &:hover,

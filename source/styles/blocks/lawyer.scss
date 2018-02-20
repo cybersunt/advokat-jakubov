@@ -1,10 +1,10 @@
 .lawyer {
   padding-top: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 17px;
   color: $navy;
   min-height: 117px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 
   &--footer {
     border-bottom: 2px solid $white;
@@ -20,14 +20,14 @@
 }
 
 .lawyer__info {
-  width: 500px;
-  margin-right: 20px;
+  flex-basis: 500px;
+
 }
 
 .lawyer__name {
   @include text(22px, 24px);
   margin-top: 0;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -39,7 +39,7 @@
 
 .lawyer__contacts {
   @include text(16px, 18px);
-  width: 440px;
+  flex-basis: 408px;
   font-size: 16px;
 }
 

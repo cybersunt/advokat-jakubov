@@ -1,7 +1,7 @@
 .main-nav {
   @include wrap;
   padding-top: 11px;
-  padding-bottom: 15px;
+  padding-bottom: 21px;
   color: $white;
   background-image: url('../img/decoration/header.jpg');
   background-position: top center;
@@ -39,7 +39,7 @@
   margin-top: 0;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 102px;
+  margin-bottom: 104px;
   @include text(30px, 36px);
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.35);
   font-style: italic;

@@ -5,10 +5,14 @@
 
 @mixin case {
   background-color: $content-bg;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+@mixin case-wrap {
   padding-left: 2.98%;
   padding-right: 2.98%;
   padding-bottom: 20px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
 }
 
 @mixin ul-line {
@@ -25,7 +29,7 @@
 }
 
 @mixin heading-sidebar {
-  padding-top: 9px;
+  padding-top: 7px;
   font-size: 16px;
   line-height: 18.35px;
   text-transform: uppercase;
@@ -51,8 +55,8 @@
   font-weight: normal;
   text-transform: uppercase;
   text-align: center;
-  padding: 9px 2.98%;
-  margin: 0 -3.2%;
+  margin: 0;
+  padding: 6px 2.98%;
 }
 
 @mixin heading-h2 {
@@ -64,6 +68,8 @@
   text-transform: uppercase;
   text-align: center;
   padding: 5px 20px;
+  margin-top: 48px;
+  margin-bottom: 25px;
 }
 
 @mixin article-link {
