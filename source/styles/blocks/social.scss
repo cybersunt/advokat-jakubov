@@ -1,0 +1,17 @@
+.social {
+  @include ul-line;
+  flex-basis: 440px;
+  justify-content: flex-end;
+}
+
+.social__item {
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.social__icon {
+  display: block;
+}

@@ -58,7 +58,7 @@
 @mixin heading-h2 {
   font-size: 16px;
   line-height: 18.35px;
-  background-color: $bg-link-hover;
+  background-color: $grey;
   color: $navy;
   font-weight: normal;
   text-transform: uppercase;
@@ -87,7 +87,7 @@
   padding: 5.5px 10px;
   color: $content-color;
   outline: none;
-  border: 1px solid $bg-link-hover;
+  border: 1px solid $grey;
 
   // Цвет бордюра при наведении на поле ввода
   &:hover,
@@ -107,7 +107,7 @@
 
   // Обязательное поле
   &:required {
-    border-color: $bg-link-hover;
+    border-color: $grey;
   }
 
   // Обязательное поле в фокусе заполнено не правильно
@@ -122,7 +122,7 @@
 
   // Плейсхолдер появляется, когда поле находится в фокусе
   &::placeholder {
-    color: $bg-link-hover;
+    color: $grey;
     font-weight: 300;
     font-style: italic;
     font-size: 0;

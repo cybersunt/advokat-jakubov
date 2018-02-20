@@ -1,0 +1,23 @@
+.footer {
+  background-color: $grey;
+  color: $white;
+}
+
+.footer__wrap {
+  @include wrap;
+}
+
+.footer__bottom {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.footer__copyright {
+  @include text(16px, 18px);
+  font-weight: 300;
+  flex-basis: 500px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 20px;
+}

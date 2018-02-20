@@ -3,7 +3,7 @@ extends main-template
 block content
   header.header
     .header__wrap
-      +about-advokat('header')
+      +about-advokat('header', 'navy')
 
     button(aria-label='Переключатель открыть/закрыть меню').nav-toggle
       span
@@ -96,15 +96,17 @@ block content
   footer.footer
     .footer__wrap
 
-      +about-advokat('footer')
+      +about-advokat('footer', 'white')
 
-      p.footer__copyright Юридические услуги. © 2018 Все права защищены.
+      .footer__bottom
 
-      ul.social
-        each social, value in socials
-          li.social__item
-            a.social__link(href= social.link, aria-label= social.alt)
-              picture.social__icon
-                //- source(srcset= social.web, type='image/webp')
-                img(src= social.img, alt= social.alt)
+        p.footer__copyright Юридические услуги. © 2018 Все права защищены.
+
+        ul.social
+          each social, value in socials
+            li.social__item
+              a.social__link(href= social.link, aria-label= social.alt)
+                picture.social__icon
+                  //- source(srcset= social.web, type='image/webp')
+                  img(src= social.img, alt= social.alt)
 

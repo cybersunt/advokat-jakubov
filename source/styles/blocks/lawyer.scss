@@ -5,6 +5,18 @@
   min-height: 117px;
   display: flex;
   justify-content: center;
+
+  &--footer {
+    border-bottom: 2px solid $white;
+    paddimg-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  &--footer,
+  &--footer .lawyer__description,
+  &--footer .lawyer__connections a {
+    color: $white;
+  }
 }
 
 .lawyer__info {
@@ -31,12 +43,31 @@
   font-size: 16px;
 }
 
+.lawyer__adress {
+  margin-top: 0;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
 .lawyer__connections {
+  margin: 0;
   display: flex;
   justify-content: space-between;
+}
 
-  a {
-    color: $navy;
-    display: block;
+.lawyer__connections a {
+  color: $navy;
+  display: inline-flex;
+  line-height: 32px;
+
+  &:hover,
+  &:focus {
+    color: $content-color;
   }
+}
+
+.lawyer__icon {
+  border-radius: 50%;
+  margin-right: 10px;
 }
