@@ -1,3 +1,7 @@
+.feedback {
+  margin-bottom: 30px;
+}
+
 .feedback__wrap {
   @include case;
   padding-bottom: 30px;
@@ -7,12 +11,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  padding-top: 25px;
 }
 
 .feedback__name {
   @include heading;
+  margin-bottom: 25px;
 }
+
 
 .feedback__layout {
   width: 100%;

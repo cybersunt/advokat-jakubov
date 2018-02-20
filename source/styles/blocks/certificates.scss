@@ -1,0 +1,23 @@
+.certificates__wrap {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.certificates__list {
+  @include ul-line;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.certificates__name {
+  @include heading-sidebar;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.certificates__all-link {
+  @include article-link;
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
