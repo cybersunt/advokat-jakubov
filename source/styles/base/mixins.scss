@@ -5,8 +5,8 @@
 
 @mixin case {
   background-color: $content-bg;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 2.98%;
+  padding-right: 2.98%;
   padding-bottom: 20px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
 }
@@ -51,9 +51,8 @@
   font-weight: normal;
   text-transform: uppercase;
   text-align: center;
-  padding: 9px 20px;
-  margin-left: -20px;
-  margin-right: -20px;
+  padding: 9px 2.98%;
+  margin: 0 -3.2%;
 }
 
 @mixin heading-h2 {
@@ -79,4 +78,59 @@
   &:active {
     font-weight: bold;
   }
+}
+
+@mixin form-field {
+  width: 100%;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 5.5px 10px;
+  color: $content-color;
+  outline: none;
+  border: 1px solid $bg-link-hover;
+
+  // Цвет бордюра при наведении на поле ввода
+  &:hover,
+  &:hover:required {
+    border-color: $navy;
+  }
+
+  // Цвет бордюра, когда поле в фокусе
+  &:focus {
+    border-color: $global-bg;
+  }
+
+  // Обязательное поле заполенено правильно
+  &:required:valid {
+    border-color: $green;
+  }
+
+  // Обязательное поле
+  &:required {
+    border-color: $bg-link-hover;
+  }
+
+  // Обязательное поле в фокусе заполнено не правильно
+  &:focus:required:invalid {
+    border-color: $red;
+  }
+
+  // Обязательное поле в фокусе заполнено правильно
+  &:focus:required:valid {
+    border-color: $green;
+  }
+
+  // Плейсхолдер появляется, когда поле находится в фокусе
+  &::placeholder {
+    color: $bg-link-hover;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 0;
+    line-height: 18px;
+  }
+
+  &:focus::placeholder {
+    font-size: 14px;
+  }
+
 }

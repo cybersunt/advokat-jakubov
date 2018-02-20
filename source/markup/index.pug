@@ -35,59 +35,60 @@ block content
             a(href='#').latest-articles__link Все статьи »
       .main__col
         section.cms-content
-        .cms-content__wrapper
-          h1 Адвокат Якубов Рашад Киязович
-          each content in textBlock1
-            p= content
+          .cms-content__wrapper
+            h1 Адвокат Якубов Рашад Киязович
+            each content in textBlock1
+              p= content
 
-          h2 Юридическая помощь
+            h2 Юридическая помощь
 
-          section.advantages
-            h3.visually-hidden Преимущества
-            ul.advantages__list
-              each advantage, value in advantages
-                li.advantages__item
-                  img(src= advantage.imgSrc, alt= advantage.imgAlt, width= advantage.imgWidth, height= advantage.imgHeight).advantages__icon
-                  = advantage.text
+            section.advantages
+              h3.visually-hidden Преимущества
+              ul.advantages__list
+                each advantage, value in advantages
+                  li.advantages__item
+                    img(src= advantage.imgSrc, alt= advantage.imgAlt, width= advantage.imgWidth, height= advantage.imgHeight).advantages__icon
+                    = advantage.text
 
-          each content in textBlock2
-            p= content
+            each content in textBlock2
+              p= content
 
-          h2 Принципы работы
+            h2 Принципы работы
 
-          each content in textBlock3
-            p= content
+            each content in textBlock3
+              p= content
 
-          blockquote "Дела бывают разные, простые и сложные, верные и безнадежные. Если шансы на успех малы – я скажу Вам об этом в самом начале. Я не буду давать Вам обещаний, которых не смогу выполнить."
+            blockquote "Дела бывают разные, простые и сложные, верные и безнадежные. Если шансы на успех малы – я скажу Вам об этом в самом начале. Я не буду давать Вам обещаний, которых не смогу выполнить."
 
-          each content in textBlock4
-            p= content
+            each content in textBlock4
+              p= content
 
         section.feedback
-        .feedback__wrap
-          h2.feedback__name Бесплатная онлайн-консультация адвоката
-          form.feedback__form(method='post', action='/s/mail_vac', enctype='multipart/form-data')
-            label.feedback__label
-              span.feedback__note Ваше имя:
-              input#your-name.feedback__field(type='text', name='your-name', required='')
-            label.feedback__label
-              span.feedback__note Ваше телефон:
-              input#phone.feedback__field(type='tel', name='phone', required='')
-            label.feedback__label
-              span.feedback__note Ваше email:s
-              input#email.feedback__field(type='email', name='email', required='')
-            label.feedback__label.feedback__label--textarea
-              span.feedback__note Текст письма:
-              textarea#message.feedback__textarea(name='message')
-            button.feedback__send(type='submit') Отправить
+          .feedback__wrap
+            h2.feedback__name Бесплатная онлайн-консультация адвоката
+            form.feedback__form(method='post', action='/s/mail_vac', enctype='multipart/form-data')
+              .feedback__layout
+                .feedback__field
+                  label.feedback__label(for='your name') Ваше имя*:
+                  input#your-name.feedback__input(type='text', name='your-name', pattern='[[A-Za-zА-Яа-яЁё]{2,}', title='Введите, пожалуйста, Ваше имя (не менее 2 символов)', placeholder='Например, Иван', required)
+                .feedback__field
+                  label.feedback__label(for='phone') Ваше телефон*:
+                  input#phone.feedback__input(type='tel', name='phone', pattern='7[0-9]{10}', title='Введите, пожалуйста, Ваш номер телефона', placeholder='7XXXXXXXXX', required)
+                .feedback__field
+                  label.feedback__label(for='email') Ваше email*:
+                  input#email.feedback__input(type='email', name='email', pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,10})', title='Введите, пожалуйста, Ваш адрес электронной почты', placeholder='ivan@mail.ru', required)
+              .feedback__field.feedback__field--textarea
+                label.feedback__label(for='message') Текст письма:
+                textarea#message.feedback__textarea(name='message',  title='Введите текст (не менее 25 символов)', minlength='25', placeholder='Тексто должен содержать минимум 25 символов')
+              button.feedback__send(type='submit') Отправить
 
         section.certificates
-        h2.certificates__name Свидетельство и cертификаты
-        ul.certificates__list
-          each certificate, value in certificates
-            li.certificates__item
-              a(href= certificate.link, aria-label='Увеличить фото').certificates__link
-                picture.certificates__thumb
+          h2.certificates__name Свидетельство и cертификаты
+          ul.certificates__list
+            each certificate, value in certificates
+              li.certificates__item
+                a(href= certificate.link, aria-label='Увеличить фото').certificates__link
+                  picture.certificates__thumb
                   //- source(srcset= certificate.web, type='image/webp')
                   img(src= certificate.img, alt= certificate.alt,  width="120" height="174")
   footer.footer

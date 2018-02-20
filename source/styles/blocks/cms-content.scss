@@ -1,9 +1,12 @@
+.cms-content {
+  margin-bottom: 30px;
+}
+
 .cms-content__wrapper {
   @include case;
 
   h1 {
     @include heading;
-    margin-top: 0;
   }
 
   h2 {
