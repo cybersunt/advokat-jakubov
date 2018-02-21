@@ -16,6 +16,7 @@
 
   p {
     line-height: 18.35px;
+    text-align: justify;
   }
 
   blockquote {
@@ -29,8 +30,16 @@
     color: $white;
     font-style: italic;
     background-image: url('../../img/decoration/balancr.png');
-
     background-position: 96% center;
     background-repeat: no-repeat;
+
+    @media #{$mobile} {
+      padding-top: 145px;
+      padding-left: 12.5px;
+      padding-right: 12.5px;
+      background-position: center 25px;
+      text-align: center;
+
+    }
   }
 }

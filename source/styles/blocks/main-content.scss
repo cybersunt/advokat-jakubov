@@ -1,5 +1,6 @@
 .main-content {
   width: 100%;
+  min-width: 320px;
   background-color: $content-bg;
   background-image: url('../img/decoration/bg-content.jpg');
   background-size: cover;
@@ -12,6 +13,11 @@
   padding-top: 19px;
   display: flex;
   justify-content: space-between;
+
+  @media #{$mobile} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .main__col {

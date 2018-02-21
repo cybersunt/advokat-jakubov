@@ -26,6 +26,10 @@ body {
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
+
+  @media #{$tablet} {
+    background: none;
+  }
 }
 
 .visually-hidden {

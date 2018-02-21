@@ -12,6 +12,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+
+  @media #{$mobile} {
+    justify-content: center;
+  }
 }
 
 .feedback__name {
@@ -25,11 +29,23 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+
+  @media #{$mobile} {
+    display: block;
+  }
 }
 
 .feedback__field {
   width: 100%;
   margin-right: 15px;
+
+  @media #{$mobile} {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   &:last-child {
     margin-right: 0;
@@ -58,6 +74,11 @@
 .feedback__input {
   @include form-field;
   max-width: 200px;
+
+  @media #{$mobile} {
+    width: 100%;
+    max-width: 430px;
+  }
 }
 
 .feedback__send {

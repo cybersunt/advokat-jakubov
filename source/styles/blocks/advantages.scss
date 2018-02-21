@@ -2,17 +2,32 @@
   padding-left: 4.3%;
   padding-right: 4.3%;
   margin-bottom: 19px;
+
+  @media #{$mobile} {
+    padding: 0;
+  }
 }
 
 .advantages__list {
   @include ul-line;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .advantages__item {
+  width: 120px;
   text-align: center;
   font-weight: bold;
   font-size: 16px;
+
+  @media #{$mobile} {
+    width: 100%;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .advantages__icon {

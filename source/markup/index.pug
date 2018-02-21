@@ -84,14 +84,14 @@ block content
 
         section.certificates
           .certificates__wrap
-            h2.certificates__name Свидетельство и cертификаты
-            a(href="#", aria-label='Посмотреть все сертификаты').certificates__all-link Все сертификаты »
-            ul.certificates__list
+            .certificates__row
+              h2.certificates__name Свидетельство и cертификаты
+              a(href="#", aria-label='Посмотреть все сертификаты').certificates__all-link Все сертификаты »
+            .certificates__list
               each certificate, value in certificates
-                li.certificates__item
-                  a(href= certificate.link, aria-label='Увеличить фото').certificates__link
-                    picture.certificates__thumb
-                      img(src= certificate.img, alt= certificate.alt,  width="120" height="174")
+                a(href= certificate.link, aria-label='Увеличить фото').certificates__link
+                  picture
+                    img(src= certificate.img, alt= certificate.alt).certificates__thumb
   footer.footer
     .footer__wrap
 

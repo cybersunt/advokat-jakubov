@@ -2,14 +2,28 @@
   padding-top: 10px;
   padding-bottom: 17px;
   color: $navy;
-  min-height: 117px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+
+  @media #{$tablet} {
+    padding-top: 0;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media #{$mobile} {
+    display: block;
+    width: 100%;
+  }
 
   &--footer {
     border-bottom: 2px solid $white;
-    paddimg-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 20px;
+
+    @media #{$tablet} {
+      display: none;
+    }
   }
 
   &--footer,
@@ -21,7 +35,16 @@
 
 .lawyer__info {
   flex-basis: 500px;
+  margin-right: 5.41%;
 
+  @media #{$tablet} {
+    flex-basis: 307px;
+    margin-right: 0;
+  }
+
+  @media #{$mobile} {
+    width: inherit;
+  }
 }
 
 .lawyer__name {
@@ -30,17 +53,48 @@
   margin-bottom: 10px;
   text-transform: uppercase;
   font-weight: 600;
+
+  @media #{$tablet} {
+    width: 307px;
+    margin-bottom: 0;
+  }
+
+  @media #{$mobile} {
+    @include text (18px, 18px);
+    width: inherit;
+    min-width: 280px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
 
 .lawyer__description {
   margin: 0;
   color: $black;
+
+  @media #{$tablet} {
+    display: none;
+  }
 }
 
 .lawyer__contacts {
   @include text(16px, 18px);
   flex-basis: 408px;
   font-size: 16px;
+
+  @media #{$tablet} {
+    flex-basis: 72px;
+    width: 72px;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  @media #{$mobile} {
+    justify-content: center;
+    width: inherit;
+    text-align: center;
+  }
 }
 
 .lawyer__adress {
@@ -48,12 +102,26 @@
   margin-bottom: 20px;
   display: inline-flex;
   align-items: center;
+
+  @media #{$tablet} {
+    display: none;
+  }
 }
 
 .lawyer__connections {
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  @media #{$tablet} {
+    width: 72px;
+  }
+
+  @media #{$mobile} {
+    justify-content: flex-start;
+    width: 112px;
+  }
 }
 
 .lawyer__connections a {
@@ -65,9 +133,33 @@
   &:focus {
     color: $content-color;
   }
+
+  span {
+    @media #{$tablet} {
+      display: none;
+    }
+  }
+}
+
+.lawyer__phone {
+  margin-bottom: 10px;
+
+  @media #{$tablet} {
+    margin-bottom: 0;
+  }
+}
+
+.lawyer__email .lawyer__icon {
+  @media #{$tablet} {
+    margin-right: 0;
+  }
 }
 
 .lawyer__icon {
-  border-radius: 50%;
   margin-right: 10px;
+  border-radius: 50%;
+
+  @media #{$tablet} {
+    margin-right: 8px;
+  }
 }
