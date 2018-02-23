@@ -26,11 +26,11 @@
           </div>
         </div>
       </div>
-      <button class="nav-toggle" aria-label="Переключатель открыть/закрыть меню"><span></span></button>
+      <button class="nav-toggle" type="button" aria-label="Переключатель открыть/закрыть меню"><span></span></button>
       <nav class="main-nav">
         <ul class="main-nav__list">
           <li class="main-nav__item"><a class="main-nav__link" href="#">Главная</a></li>
-          <li class="main-nav__item"><a class="main-nav__link" href="#">Услуги адвоката</a></li>
+          <li class="main-nav__item main-nav__item--service"><a class="main-nav__link" href="#">Услуги адвоката</a></li>
           <li class="main-nav__item"><a class="main-nav__link" href="#">Практика</a></li>
           <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
         </ul>
@@ -39,10 +39,10 @@
       </nav>
     </header>
     <main class="main-content">
-      <div class="main-content__wrap">
+      <div class="main-content__wrap main-content__wrap--show-submenu">
         <aside class="sidebar">
           <nav class="service-menu">
-            <div class="service-menu__name">Услуги</div>
+            <button class="service-menu__name" href="#" disabled="disabled">Услуги</button>
             <ul class="service-menu__list">
               <li class="service-menu__item"><a class="service-menu__link" href="#">Недвижимость</a></li>
               <li class="service-menu__item"><a class="service-menu__link" href="#">Земельные споры</a></li>

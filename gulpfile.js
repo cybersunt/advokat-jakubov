@@ -83,7 +83,7 @@ gulp.task('sprite', function () {
 });
 
 gulp.task('watch', () => {
-	gulp.watch('source/**/*.pug', ['pug']);
+	gulp.watch('source/**/*.{pug,json}', ['pug']);
 	gulp.watch('source/**/*.scss', ['sass']);
   gulp.watch('source/**/*', ['images:content']);
   gulp.watch('source/**/*', ['images:decoration']);

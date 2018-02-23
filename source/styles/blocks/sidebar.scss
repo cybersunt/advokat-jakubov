@@ -7,3 +7,99 @@
   }
 }
 
+.sidebar--show {
+  @media #{$tablet} {
+    width: calc(100% + 46px);
+    display: block;
+    margin-right: -23px;
+    margin-left: -23px;
+    position: relative;
+
+    .service-menu {
+      box-shadow: none;
+      background-color: transparent;
+      padding-bottom: 0;
+    }
+
+    .service-menu__name {
+      @include text(16px, 18.35px);
+      width: 100%;
+      padding: 10px 23px 12px;
+      margin: 0;
+      text-transform: none;
+      background-color: $navy;
+      color: $white;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 3px;
+        left: 90px;
+        background-color: $white;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+        top: 15px;
+      }
+
+      &::after {
+        min-width: 10px;
+        max-width: 10px;
+        top: 21px;
+        transform: rotate(-45deg);
+      }
+
+      &:hover,
+      &:focus {
+        color: $grey;
+        cursor: pointer;
+      }
+
+      &:hover::before,
+      &:focus::before,
+      &:hover::after,
+      &:focus::after {
+        background-color: $grey;
+      }
+    }
+
+    .service-menu__name--click {
+      &::before,
+      &:after {
+        top: 18px;
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+        left: 96px;
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+
+    .service-menu__list {
+      width: 100%;
+      background-color: $white;
+      display: none;
+    }
+
+    .service-menu__list--show {
+       display: block;
+    }
+
+    .latest-articles {
+      display: none;
+    }
+  }
+
+  @media #{$mobile} {
+    width: calc(100% + 40px);
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}

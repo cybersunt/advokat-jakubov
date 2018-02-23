@@ -5,13 +5,17 @@ block content
     .header__wrap
       +about-advokat('header', 'navy')
 
-    button(aria-label='Переключатель открыть/закрыть меню').nav-toggle
+    button(type='button', aria-label='Переключатель открыть/закрыть меню').nav-toggle
       span
     nav.main-nav
       ul.main-nav__list
         each item in mainNav
-          li.main-nav__item
-            a.main-nav__link(href='#')= item
+          if item === 'Услуги адвоката'
+            li.main-nav__item.main-nav__item--service
+              a.main-nav__link(href='#')= item
+          else
+            li.main-nav__item
+              a.main-nav__link(href='#')= item
 
       blockquote.main-nav__blockquote
         span Знать свои права -&nbsp;
@@ -19,7 +23,7 @@ block content
       p.main-nav__note Первичная устная консультация - бесплатно!
 
   main.main-content
-    .main-content__wrap
+    .main-content__wrap.main-content__wrap--show-submenu
       aside.sidebar
         +nav('service-menu', 'Услуги', serviceMenu)
 

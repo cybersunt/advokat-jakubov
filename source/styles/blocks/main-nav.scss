@@ -28,14 +28,30 @@
   }
 }
 
+.main-nav__item--service {
+  @media #{$tablet} {
+    display: none;
+  }
+}
+
 .main-nav__link {
   @include text(16px, 18.35px);
   color: $white;
   text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+
+  @media #{$tablet} {
+    border: none;
+  }
 
   &:hover,
   &:focus {
     border-bottom: 1px solid $white;
+
+    @media #{$tablet} {
+      color: $grey;
+      border: none;
+    }
   }
 }
 
