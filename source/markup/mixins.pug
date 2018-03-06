@@ -19,7 +19,7 @@ mixin about-advokat (className, param)
 
 mixin nav (className, name, items)
   nav(class=`${className}`)
-    button(class=`${className}__name service-menu--no-js`, href='#', disabled)=name
+    button(class=`${className}__name ${className}__name--nojs`, href='#', disabled)=name
     ul(class=`${className}__list`)
       each item in items
         li(class=`${className}__item`)

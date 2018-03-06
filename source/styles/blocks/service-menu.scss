@@ -12,31 +12,13 @@
   }
 }
 
-.service-menu--click {
+.service-menu__name--nojs + .service-menu__list {
   @media #{$tablet} {
     display: block;
-
-    + .service-menu__list {
-      display: block;
-    }
-
-    &::before,
-    &:after {
-      top: 18px;
-    }
-
-    &::before {
-      transform: rotate(-45deg);
-      left: 96px;
-    }
-
-    &::after {
-      transform: rotate(45deg);
-    }
   }
 }
 
-.service-menu--no-js + .service-menu__list {
+.service-menu__name--click + .service-menu__list {
   @media #{$tablet} {
     display: block;
   }
@@ -95,6 +77,24 @@
     &:hover::after,
     &:focus::after {
       background-color: $grey;
+    }
+  }
+}
+
+.service-menu__name--click {
+  @media #{$tablet} {
+    &::before,
+    &:after {
+      top: 18px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+      left: 96px;
+    }
+
+    &::after {
+      transform: rotate(45deg);
     }
   }
 }

@@ -5,7 +5,7 @@ block content
     .header__wrap
       +about-advokat('header', 'navy')
 
-    button(type='button', aria-label='Переключатель открыть/закрыть меню').nav-toggle.nav-toggle--no-js
+    button(type='button', aria-label='Переключатель открыть/закрыть меню').nav-toggle.nav-toggle--nojs
       span
     nav.main-nav
       ul.main-nav__list
@@ -24,7 +24,7 @@ block content
 
   main.main-content
     .main-content__wrap
-      aside.sidebar.sidebar--show
+      aside.sidebar
         +nav('service-menu', 'Услуги', serviceMenu)
 
         .latest-articles
@@ -113,3 +113,4 @@ block content
                   //- source(srcset= social.web, type='image/webp')
                   img(src= social.img, alt= social.alt)
 
+  script(src='js/scripts.js')
