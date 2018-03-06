@@ -1,3 +1,9 @@
+.latest-articles {
+  @media #{$tablet} {
+    display: none;
+  }
+}
+
 .latest-articles__wrapper {
   @include case;
   padding-left: 8%;

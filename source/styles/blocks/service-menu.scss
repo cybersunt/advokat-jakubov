@@ -6,11 +6,40 @@
 
   @media #{$tablet} {
     display: block;
+    box-shadow: none;
+    background-color: transparent;
+    padding-bottom: 0;
   }
 }
 
 .service-menu--click {
-  display: block;
+  @media #{$tablet} {
+    display: block;
+
+    + .service-menu__list {
+      display: block;
+    }
+
+    &::before,
+    &:after {
+      top: 18px;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+      left: 96px;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.service-menu--no-js + .service-menu__list {
+  @media #{$tablet} {
+    display: block;
+  }
 }
 
 .service-menu__name {
@@ -23,12 +52,63 @@
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 16px;
+
+  @media #{$tablet} {
+    @include text(16px, 18.35px);
+    width: 100%;
+    padding: 10px 23px 12px;
+    margin: 0;
+    text-transform: none;
+    background-color: $navy;
+    color: $white;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 3px;
+      left: 90px;
+      background-color: $white;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: 15px;
+    }
+
+    &::after {
+      min-width: 10px;
+      max-width: 10px;
+      top: 21px;
+      transform: rotate(-45deg);
+    }
+
+    &:hover,
+    &:focus {
+      color: $grey;
+      cursor: pointer;
+    }
+
+    &:hover::before,
+    &:focus::before,
+    &:hover::after,
+    &:focus::after {
+      background-color: $grey;
+    }
+  }
 }
 
 .service-menu__list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+   @media #{$tablet} {
+    width: 100%;
+    background-color: $white;
+    display: none;
+  }
 }
 
 .service-menu__link {

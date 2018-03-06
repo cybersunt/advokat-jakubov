@@ -89,7 +89,13 @@
   }
 }
 
-.nav-toggle--click {
+.nav-toggle--no-js {
+  @media #{$mobile} {
+    bottom: 146px;
+  }
+}
+
+.nav-toggle--click{
   @media #{$mobile} {
     bottom: 146px;
   }
@@ -125,7 +131,8 @@
 }
 
 
-.nav-toggle--click + .main-nav {
+.nav-toggle--click + .main-nav,
+.nav-toggle--no-js + .main-nav {
   @media #{$tablet} {
     display: block;
     background-image: none;

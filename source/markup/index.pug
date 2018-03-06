@@ -5,7 +5,7 @@ block content
     .header__wrap
       +about-advokat('header', 'navy')
 
-    button(type='button', aria-label='Переключатель открыть/закрыть меню').nav-toggle
+    button(type='button', aria-label='Переключатель открыть/закрыть меню').nav-toggle.nav-toggle--no-js
       span
     nav.main-nav
       ul.main-nav__list
@@ -23,8 +23,8 @@ block content
       p.main-nav__note Первичная устная консультация - бесплатно!
 
   main.main-content
-    .main-content__wrap.main-content__wrap--show-submenu
-      aside.sidebar
+    .main-content__wrap
+      aside.sidebar.sidebar--show
         +nav('service-menu', 'Услуги', serviceMenu)
 
         .latest-articles
