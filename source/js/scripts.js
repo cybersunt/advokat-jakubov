@@ -26,3 +26,27 @@
     submenuToggle.classList.toggle('service-menu__name--click');
   });
 })();
+
+
+var links = document.querySelector('.certificates__list');
+
+links.addEventListener('click', showImage);
+
+function showImage(evt) {
+  var target = evt.target.parentNode;
+  if (target.classList.contains('certificates__link')) {
+    evt.preventDefault();
+    createOverlay();
+  }
+}
+
+function createOverlay () {
+  var footer = document.querySelector('.footer');
+  var overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+  var img = document.createElement('img');
+  img.classList.add('frame');
+  overlay.appendChild(sp4);
+  var parentDiv = footer.parentNode;
+  parentDiv.insertBefore(overlay, footer.nextSibling);
+}

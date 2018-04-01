@@ -61,3 +61,22 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 9998;
+}
+
+.frame {
+  position: fixed;
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  top: calc(50% - 200px);
+  left: calc(50% - 300px);
+  z-index: 9999;
+}

@@ -94,8 +94,7 @@ block content
             .certificates__list
               each certificate, value in certificates
                 a(href= certificate.link, aria-label='Увеличить фото').certificates__link
-                  picture
-                    img(src= certificate.img, alt= certificate.alt).certificates__thumb
+                  img(src= certificate.img, alt= certificate.alt).certificates__thumb
   footer.footer
     .footer__wrap
 
@@ -110,7 +109,7 @@ block content
             li.social__item
               a.social__link(href= social.link, aria-label= social.alt)
                 picture.social__icon
-                  //- source(srcset= social.web, type='image/webp')
+                  source(srcset= social.web, type='image/webp')
                   img(src= social.img, alt= social.alt)
 
   script(src='js/scripts.js')
