@@ -37,10 +37,6 @@ gulp.task('sass', () => {
       browsers : ['> 5%'],
       cascade : false
     }))
-    // .pipe(cssunit({
-    //  type     :    'px-to-rem',
-    //  rootSize  :    16
-    // }))
     .pipe(gp.sourcemaps.write())
     .pipe(gulp.dest('./public/css'))
     .pipe(gp.csso())
@@ -139,21 +135,6 @@ gulp.task('copy', function() {
   .pipe(gulp.dest("./public"));
 });
 
-// gulp.task('sprite', function () {
-//   var spriteData = gulp.src(
-//     './src/img/icons/*.png'
-//   ).pipe(spritesmith({
-//     imgName: 'sprite.png',
-//     cssName: 'sprite.scss',
-//     cssFormat: 'css',
-//     imgPath: '../img/sprite.png',
-//     padding: 70
-//   }));
-
-//   spriteData.img.pipe(gulp.dest('./dist/img'));
-//   spriteData.css.pipe(gulp.dest('./src/styles/sprite'));
-// });
-
 gulp.task('watch', () => {
   gulp.watch('source/**/*.{pug,json}', ['pug']);
   gulp.watch('source/**/*.scss', ['sass']);
@@ -171,6 +152,5 @@ gulp.task('default', [
   'images:content',
   'images:decoration',
   'webp',
-  // 'sprite',
   'server', 'watch'
   ]);

@@ -27,26 +27,104 @@
   });
 })();
 
+//script for displaying pictures in the modal window
+(function() {
+  var previewImageList = document.querySelector('.certificates__list');
 
-var links = document.querySelector('.certificates__list');
+  //create elements for modal window
+  var image = document.createElement('img');
+  var button = document.createElement('button');
+  var galleryWrap = document.createElement('div');
+  var container = document.createElement('section');
+  var gallery = document.createElement('div');
 
-links.addEventListener('click', showImage);
+  //щpening a window with a click on the photo
+  previewImageList.addEventListener('click', function(evt) {
+    checkElement(evt);
+    window.addEventListener('keydown', onGalleryCloseKeyDown);
+  });
 
-function showImage(evt) {
-  var target = evt.target.parentNode;
-  if (target.classList.contains('certificates__link')) {
-    evt.preventDefault();
-    createOverlay();
+  //open the window with the photo view by pressing the enter key
+  previewImageList.addEventListener('keydown', function(evt) {
+    checkKeyCode(evt);
+    window.addEventListener('keydown', onGalleryCloseKeyDown);
+  });
+
+  //function of closing the window by pressing ESC and ENTER
+  function onGalleryCloseKeyDown(evt) {
+    checkKeyCode(evt);
+    window.removeEventListener('keydown', onGalleryCloseKeyDown);
   }
-}
 
-function createOverlay () {
-  var footer = document.querySelector('.footer');
-  var overlay = document.createElement('div');
-  overlay.classList.add('overlay');
-  var img = document.createElement('img');
-  img.classList.add('frame');
-  overlay.appendChild(sp4);
-  var parentDiv = footer.parentNode;
-  parentDiv.insertBefore(overlay, footer.nextSibling);
-}
+  // click-close function
+  function onGalleryCloseBtnClick() {
+    deleteGallery();
+    window.removeEventListener('keydown', onGalleryCloseKeyDown);
+  }
+
+  //the function that checks which key was pressed
+  function checkKeyCode(evt) {
+    var KEY_CODE = {
+      ENTER: 13,
+      ESC: 27
+    };
+
+    switch(evt.keyCode) {
+      case KEY_CODE.ENTER:
+      checkElement(evt);
+      break;
+
+      case KEY_CODE.ESC:
+      deleteGallery();
+      break;
+    }
+  }
+
+  //function that checks which item is clicked
+  function checkElement(evt) {
+    evt.preventDefault();
+    switch(evt.target.tagName) {
+      case 'A':
+      createGallery(evt.target);
+      break;
+
+      case 'IMG':
+      createGallery(evt.target.parentNode);
+      break;
+      default:
+      deleteGallery();
+    }
+  }
+
+  //function that creates a modal window
+  function createGallery(element) {
+    addClassElements('gallery');
+    image.src = element.href;
+    button.type = 'button';
+
+    galleryWrap.appendChild(button);
+    galleryWrap.appendChild(image);
+    gallery.appendChild(container);
+    container.appendChild(galleryWrap);
+    document.body.appendChild(gallery);
+
+    button.addEventListener('click', onGalleryCloseBtnClick);
+    button.addEventListener('keydown', onGalleryCloseKeyDown);
+
+    function addClassElements(classElem) {
+      gallery.classList.add(classElem);
+      container.classList.add(classElem + '__container');
+      galleryWrap.classList.add(classElem + '__wrap');
+      image.classList.add(classElem + '__image');
+      button.classList.add(classElem + '__btn-close');
+    }
+  }
+
+  //function that removes the modal window
+  function deleteGallery() {
+    button.removeEventListener('click', onGalleryCloseBtnClick);
+    button.removeEventListener('keydown', onGalleryCloseKeyDown);
+
+    document.body.removeChild(gallery);
+  }
+})();
