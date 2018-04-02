@@ -83,7 +83,7 @@ block content
                   input#email.feedback__input(type='email', name='email', pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,10})', title='Введите, пожалуйста, Ваш адрес электронной почты', placeholder='ivan@mail.ru', required)
               .feedback__field.feedback__field--textarea
                 label.feedback__label(for='message') Текст письма:
-                textarea#message.feedback__textarea(name='message',  title='Введите текст (не менее 25 символов)', minlength='25', placeholder='Тексто должен содержать минимум 25 символов')
+                textarea#message.feedback__textarea(name='message', title='Введите текст', placeholder='Введите текст')
               button.feedback__send(type='submit') Отправить
 
         section.certificates
@@ -112,4 +112,4 @@ block content
                   source(srcset= social.web, type='image/webp')
                   img(src= social.img, alt= social.alt)
 
-  script(src='js/scripts.js')
+  script(src='js/scripts.min.js')

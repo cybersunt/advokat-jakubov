@@ -128,3 +128,17 @@
     document.body.removeChild(gallery);
   }
 })();
+
+// form validation
+(function() {
+  var formFeedback = document.querySelector('.feedback__form');
+  var feedbackSubmit = formFeedback.querySelector('.feedback__send');
+
+  feedbackSubmit.addEventListener('click', function () {
+    for (var i = 0; i < formFeedback.elements.length - 1; i++) {
+      formFeedback.elements[i].style.borderColor = 'rgb(0, 127, 1)';
+      if (!formFeedback.elements[i].checkValidity()) {
+        formFeedback.elements[i].style.borderColor = 'rgb(183, 0, 1)';
+      }
+    }});
+})();

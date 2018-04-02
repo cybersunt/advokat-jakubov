@@ -140,6 +140,14 @@
     border-color: $red;
   }
 
+  &:focus:valid {
+    border-color: $green;
+  }
+
+  &:focus:invalid {
+    border-color: $red;
+  }
+
   // Обязательное поле в фокусе заполнено правильно
   &:focus:required:valid {
     border-color: $green;
@@ -150,12 +158,13 @@
     color: $grey;
     font-weight: 300;
     font-style: italic;
-    font-size: 0;
+    font-size: 14px;
     line-height: 18px;
+    opacity: 0;
   }
 
   &:focus::placeholder {
-    font-size: 14px;
+    opacity: 1;
   }
 
 }
