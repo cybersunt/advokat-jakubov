@@ -119,10 +119,6 @@ gulp.task('scripts', function () {
     .pipe(reload({stream : true}));
 });
 
-gulp.task('clean', function() {
-  return del('./public');
-});
-
 gulp.task('copy', function() {
   return gulp.src([
     './source/fonts/**',
