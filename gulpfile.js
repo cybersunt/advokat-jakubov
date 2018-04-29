@@ -2,10 +2,11 @@ const gulp = require('gulp'),
       fs = require('fs'),
       gp = require('gulp-load-plugins')(),
 
+      autoprefixer = require('autoprefixer'),
       rsp = require('remove-svg-properties').stream,
 
-       importcss = require('postcss-import'),
-       urlcss = require('postcss-url'),
+      importcss = require('postcss-import'),
+      urlcss = require('postcss-url'),
 
       browserSync = require('browser-sync').create(),
       reload = browserSync.reload,
@@ -16,7 +17,7 @@ const gulp = require('gulp'),
       cssunit = require('gulp-css-unit');
 
 // server
-gulp.task('server', function() {
+gulp.task('server', () => {
   browserSync.init({
     open: false,
     notify: false,
@@ -33,10 +34,9 @@ gulp.task('sass', () => {
     .pipe(gp.sourcemaps.init())
     .pipe(sassGlob())
     .pipe(gp.sass())
-    .pipe(gp.autoprefixer({
-      browsers : ['> 5%'],
-      cascade : false
-    }))
+    .pipe(gp.postcss([
+      autoprefixer('last 2 version')
+    ]))
     .pipe(gp.sourcemaps.write())
     .pipe(gulp.dest('./public/css'))
     .pipe(gp.csso())
@@ -85,7 +85,7 @@ gulp.task('images:decoration', () => {
 });
 
 // webp
-gulp.task('webp', function () {
+gulp.task('webp', () => {
   return gulp.src('./source/img/content/**/*.{png,jpg}')
     .pipe(gp.plumber())
     .pipe(gp.webp({quality: 80}))
@@ -94,7 +94,7 @@ gulp.task('webp', function () {
 });
 
 // SVG-спрайт
-gulp.task('sprite', function () {
+gulp.task('sprite', () => {
   gulp.src('./source/img/sprite/*.svg')
     .pipe(gp.plumber())
     .pipe(rsp.remove({
@@ -108,7 +108,7 @@ gulp.task('sprite', function () {
     .pipe(reload({stream : true}));
 });
 
-gulp.task('scripts', function () {
+gulp.task('scripts', () => {
   gulp.src('./source/js/**/*.js')
     .pipe(gp.jslint())
     .pipe(gp.plumber())
@@ -119,7 +119,7 @@ gulp.task('scripts', function () {
     .pipe(reload({stream : true}));
 });
 
-gulp.task('copy', function() {
+gulp.task('copy', () => {
   return gulp.src([
     './source/fonts/**',
     // './source/img/**',
